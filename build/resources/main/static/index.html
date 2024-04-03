@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kjøp Kinobilletter</title>
+    <!-- Link til Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link til custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Kjøp Kinobilletter</h1>
+    <form id="ticketForm">
+        <div class="form-group">
+            <label for="film">Velg filmen du vil se på:</label>
+            <select id="film" class="form-control" required>
+                <option value="" disabled selected>Velg film</option>
+                <option value="film1">Film 1</option>
+                <option value="film2">Film 2</option>
+                <option value="film3">Film 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Antall billetter:</label>
+            <input type="number" id="quantity" class="form-control" min="1" required>
+        </div>
+        <div class="form-group">
+            <label for="firstName">Fornavn:</label>
+            <input type="text" id="firstName" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Etternavn:</label>
+            <input type="text" id="lastName" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Telefonnummer:</label>
+            <input type="tel" id="phone" class="form-control" pattern="[0-9]{8}" required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-post:</label>
+            <input type="email" id="email" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Kjøp billett</button>
+    </form>
+
+    <h2 class="mt-5">Alle billetter</h2>
+    <table class="table mt-3">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Film</th>
+            <th scope="col">Antall</th>
+            <th scope="col">Fornavn</th>
+            <th scope="col">Etternavn</th>
+            <th scope="col">Telefonnummer</th>
+            <th scope="col">E-post</th>
+        </tr>
+        </thead>
+        <tbody id="ticketList"></tbody>
+    </table>
+
+    <button id="deleteAll" class="btn btn-danger">Slett alle billettene</button>
+</div>
+
+<!-- Link til Bootstrap JS, jQuery, og Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
